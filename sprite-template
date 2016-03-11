@@ -1,0 +1,27 @@
+{{#shapes}}     
+	${{base}} = {{width.inner}} {{height.inner}}px {{position.absolute.xy}}
+{{/shapes}}
+
+spriteWidth($sprite) {
+	width: $sprite[0]px;
+}
+
+spriteHeight($sprite) {
+	height: $sprite[1];
+}
+
+spritePosition($sprite) {
+	background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+	background-image: url('sprite/sprite.svg');
+}
+
+sprite($sprite, wdth = $sprite[0]) {
+	spriteImage($sprite)
+	spritePosition($sprite)
+	spriteWidth($sprite)
+	spriteHeight($sprite)
+	transform: scale(wdth / $sprite[0]);
+}
